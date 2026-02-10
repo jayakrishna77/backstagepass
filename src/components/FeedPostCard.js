@@ -6,28 +6,25 @@ import { FaRegSmile } from "react-icons/fa";
 
 export default function FeedPostCard({ post }) {
   const { theme } = useTheme();
-  const [isSubmitted, setIsSubmitted] = useState(true);
   const [isHovering, setIsHovering] = useState(false);
 
   return (
     <div>
-      {isSubmitted && (
-        <div
-          className="confetti-header"
-          style={{ backgroundColor: "rgb(230,246,235)" }}
-        >
-          <div className="confetti-animation">
-            <span className="confetti">🎉</span>
-            <span className="confetti">✨</span>
-            <span className="confetti">🎊</span>
-            <span className="confetti">⭐</span>
-            <span className="confetti">🎯</span>
-          </div>
-          <p style={{ color: "#218358", fontWeight: 600, fontSize: "14px" }}>
-            Your Submission
-          </p>
+      <div
+        className="confetti-header"
+        style={{ backgroundColor: "rgb(230,246,235)" }}
+      >
+        <div className="confetti-animation">
+          <span className="confetti">🎉</span>
+          <span className="confetti">✨</span>
+          <span className="confetti">🎊</span>
+          <span className="confetti">⭐</span>
+          <span className="confetti">🎯</span>
         </div>
-      )}
+        <p style={{ color: "#218358", fontWeight: 600, fontSize: "14px" }}>
+          Your Submission
+        </p>
+      </div>
 
       <article
         className="feed-post-card"

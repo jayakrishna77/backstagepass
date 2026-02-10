@@ -20,21 +20,6 @@ const mockFeedPosts = [
   },
 ];
 
-const mockSubscriberPost = {
-  id: 2,
-  userName: "Russell Brunson",
-  avatar: "https://ui-avatars.com/api/?name=Russell+Brunson&background=random",
-  time: "2hrs ago",
-  description: "This 9-day fitness challenge is designed to help you build consistency, boost energy, and feel stronger—one day at a time. Each day comes with a simple, achievable goal. Master your current fitness level!",
-  checklist: [
-    { text: "Minimum 20 minutes of sit-up", checked: true },
-    { text: "Mention intensity", checked: true },
-    { text: "Upload Media (Optional)", checked: false },
-  ],
-  participants: "85+",
-  participantText: "participants already completed",
-};
-
 export default function Layout({ children }) {
   const { theme } = useTheme();
   const [collapsed, setCollapsed] = useState(false);

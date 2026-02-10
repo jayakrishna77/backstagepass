@@ -7,8 +7,8 @@ import { GoCheckCircleFill } from "react-icons/go";
 const Sidebar = () => {
   const { theme } = useTheme();
   const [selectedDay, setSelectedDay] = useState(0);
-  const [lockedDays, setLockedDays] = useState([ 2, 3, 4, 5, 6, 7, 8]);
 
+  const lockedDays = [2, 3, 4, 5, 6, 7, 8];
   const days = Array.from({ length: 9 }, (_, i) => i);
   const isCompleted = selectedDay === 0;
 
