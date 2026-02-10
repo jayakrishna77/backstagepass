@@ -1,0 +1,76 @@
+/* Layout Styles */
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: background-color 0.3s ease;
+}
+
+.layout-main {
+  display: flex;
+  flex: 1;
+  background-color: rgb(247,246,252);
+}
+
+.layout-content {
+  flex: 1;
+  overflow-y: auto;
+  transition: background-color 0.3s ease;
+}
+
+.feed-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Scrollbar styling for layout-content */
+.layout-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.layout-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.layout-content::-webkit-scrollbar-thumb {
+  background: rgba(122, 127, 135, 0.3);
+  border-radius: 4px;
+}
+
+.layout-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(122, 127, 135, 0.5);
+}
+
+/* Responsive Design - Tablet */
+@media (max-width: 1024px) {
+  .feed-container {
+    max-width: 600px;
+    padding: 20px;
+    gap: 18px;
+  }
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 768px) {
+  .layout-main {
+    flex-direction: column;
+  }
+
+  .feed-container {
+    max-width: 100%;
+    padding: 16px;
+    gap: 16px;
+  }
+}
+
+/* Responsive Design - Small Mobile */
+@media (max-width: 480px) {
+  .feed-container {
+    padding: 12px;
+    gap: 12px;
+  }
+}

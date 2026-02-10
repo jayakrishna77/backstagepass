@@ -1,0 +1,63 @@
+import { useState } from "react";
+import Header from "./components/Header";
+import Sidebar from "./components/Sidebar";
+import SubHeader from "./components/SubHeader";
+import FeedPostCard from "./components/FeedPostCard";
+import { useTheme } from "./context/ThemeContext";
+import './Layout.css';
+
+const mockFeedPosts = [
+  {
+    id: 1,
+    userName: "Ashraf Idrish",
+    avatar: "https://ui-avatars.com/api/?name=Ashraf+Idrish&background=random",
+    time: "0s ago",
+    description: "Today's challenge workout completed - feeling stronger already!",
+    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=400&fit=crop",
+    likes: 10,
+    flames: 0,
+    comments: 0,
+  },
+];
+
+const mockSubscriberPost = {
+  id: 2,
+  userName: "Russell Brunson",
+  avatar: "https://ui-avatars.com/api/?name=Russell+Brunson&background=random",
+  time: "2hrs ago",
+  description: "This 9-day fitness challenge is designed to help you build consistency, boost energy, and feel stronger—one day at a time. Each day comes with a simple, achievable goal. Master your current fitness level!",
+  checklist: [
+    { text: "Minimum 20 minutes of sit-up", checked: true },
+    { text: "Mention intensity", checked: true },
+    { text: "Upload Media (Optional)", checked: false },
+  ],
+  participants: "85+",
+  participantText: "participants already completed",
+};
+
+export default function Layout({ children }) {
+  const { theme } = useTheme();
+  const [collapsed, setCollapsed] = useState(false);
+
+  return (
+    <div 
+      className="layout"
+      style={{ backgroundColor: theme.colors.bg }}
+    >
+      <Header />
+      <SubHeader />
+      <div className="layout-main">
+        <Sidebar collapsed={collapsed} onToggle={() => setCollapsed((s) => !s)} />
+        <main 
+          className="layout-content"
+          style={{ backgroundColor: theme.colors.bg }}
+        >
+          <div className="feed-container">
+            <FeedPostCard post={mockFeedPosts[0]} />
+          </div>
+          {children}
+        </main>
+      </div>
+    </div>
+  );
+}
